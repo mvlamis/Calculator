@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MathParser
 
 struct ContentView: View {
     @State private var expression = ""
@@ -225,7 +226,8 @@ struct ContentView: View {
                             .clipShape(Circle())
                     }
                     Button(action: {
-                        result = String(calculateExpression(expression)!)
+//                        result = String(calculateExpression(expression)!)
+                        result = parserCalc(expression)
                     }) {
                         Text("=")
                             .font(.system(size: buttonTextSize))
@@ -273,7 +275,7 @@ struct ContentView: View {
     }
     
     func calculateExpression(_ expression: String) -> String? {
-        
+        print(NSExpression(format: "(1)*(2)").expressionValue(with: nil, context: nil) as? Float ?? 0)
         
         if expression.first == "+" || expression.first == "-" || expression.first == "/" || expression.first == "*" {
             return "Expression cannot begin with an operator."
@@ -291,6 +293,15 @@ struct ContentView: View {
             return String(result)
             
         }
+    }
+    func parserCalc(_ expression: String) -> String {
+        do {
+            let value = try expression.evaluate()
+            return String(value)
+        } catch {
+            return("oops")
+        }
+
     }
     
 }

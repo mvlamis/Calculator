@@ -1,0 +1,4 @@
+project '/Users/michaelvlamis/Library/CloudStorage/OneDrive-Personal/Projects/Calculator/Calculator.xcodeproj'
+target 'Calculator' do
+  pod 'DDMathParser', '~> 2.0'
+end
