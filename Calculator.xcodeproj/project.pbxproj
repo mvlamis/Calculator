@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FA037C8B2A341E18006E64F7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FA037C8A2A341E18006E64F7 /* Podfile */; };
 		FA037C8F2A35712F006E64F7 /* MathParser in Frameworks */ = {isa = PBXBuildFile; productRef = FA037C8E2A35712F006E64F7 /* MathParser */; };
+		FA2F81BD2A3BEFE2006897DB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F81BC2A3BEFE2006897DB /* SettingsView.swift */; };
+		FA2F81BF2A3BF08E006897DB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2F81BE2A3BF08E006897DB /* Launch Screen.storyboard */; };
 		FA78D7422A3147A8000FF202 /* CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78D7412A3147A8000FF202 /* CalculatorApp.swift */; };
 		FA78D7442A3147A8000FF202 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78D7432A3147A8000FF202 /* ContentView.swift */; };
 		FA78D7462A3147A9000FF202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA78D7452A3147A9000FF202 /* Assets.xcassets */; };
@@ -18,6 +20,9 @@
 /* Begin PBXFileReference section */
 		FA037C8A2A341E18006E64F7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		FA037C8D2A356D85006E64F7 /* DDMathParser-3.1.0 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "DDMathParser-3.1.0"; path = "../../../../../Downloads/DDMathParser-3.1.0"; sourceTree = "<group>"; };
+		FA27E33A2A3BEA21008191A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FA2F81BC2A3BEFE2006897DB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA2F81BE2A3BF08E006897DB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		FA78D73E2A3147A8000FF202 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA78D7412A3147A8000FF202 /* CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorApp.swift; sourceTree = "<group>"; };
 		FA78D7432A3147A8000FF202 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,8 +70,11 @@
 		FA78D7402A3147A8000FF202 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				FA27E33A2A3BEA21008191A9 /* Info.plist */,
 				FA78D7412A3147A8000FF202 /* CalculatorApp.swift */,
 				FA78D7432A3147A8000FF202 /* ContentView.swift */,
+				FA2F81BE2A3BF08E006897DB /* Launch Screen.storyboard */,
+				FA2F81BC2A3BEFE2006897DB /* SettingsView.swift */,
 				FA037C8A2A341E18006E64F7 /* Podfile */,
 				FA78D7452A3147A9000FF202 /* Assets.xcassets */,
 				FA78D7472A3147A9000FF202 /* Preview Content */,
@@ -113,7 +121,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					FA78D73D2A3147A8000FF202 = {
 						CreatedOnToolsVersion = 14.3;
@@ -145,6 +153,7 @@
 			files = (
 				FA037C8B2A341E18006E64F7 /* Podfile in Resources */,
 				FA78D7492A3147A9000FF202 /* Preview Assets.xcassets in Resources */,
+				FA2F81BF2A3BF08E006897DB /* Launch Screen.storyboard in Resources */,
 				FA78D7462A3147A9000FF202 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2F81BD2A3BEFE2006897DB /* SettingsView.swift in Sources */,
 				FA78D7442A3147A8000FF202 /* ContentView.swift in Sources */,
 				FA78D7422A3147A8000FF202 /* CalculatorApp.swift in Sources */,
 			);
@@ -168,6 +178,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -200,6 +211,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -228,6 +240,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -260,6 +273,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -281,17 +295,19 @@
 		FA78D74D2A3147A9000FF202 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Pink Icon";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Calculator/Preview Content\"";
 				DEVELOPMENT_TEAM = X5LF52G74Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calculator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,17 +326,19 @@
 		FA78D74E2A3147A9000FF202 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Pink Icon";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Calculator/Preview Content\"";
 				DEVELOPMENT_TEAM = X5LF52G74Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calculator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

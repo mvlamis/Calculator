@@ -44,7 +44,11 @@ struct ContentView: View {
                         Button(action: {}) {
                             Image(systemName:"delete.backward")
                                 .onTapGesture {
-                                    expression.remove(at: expression.index(before: expression.endIndex))
+                                    if expression == "" {
+                                        print("clear already")
+                                    } else {
+                                        expression.remove(at: expression.index(before: expression.endIndex))
+                                    }
                                     result = ""
                                 }
                                 .onLongPressGesture(minimumDuration: 0.1) {
@@ -350,6 +354,40 @@ struct ContentView: View {
                                     .clipShape(Circle())
                             }
                             
+                            Button(action: {
+                                expression.append("sin(")
+                            }) {
+                                Text("sin")
+                                    .font(.title)
+                                    .padding()
+                                    .frame(width: 75, height: 50)
+                                    .foregroundStyle(.white)
+                                    .background(.orange)
+                                    .clipShape(RoundedRectangle(cornerRadius:100))
+                            }
+                            Button(action: {
+                                expression.append("cos(")
+                            }) {
+                                Text("cos")
+                                    .font(.title)
+                                    .padding()
+                                    .frame(width: 80, height: 50)
+                                    .foregroundStyle(.white)
+                                    .background(.orange)
+                                    .clipShape(RoundedRectangle(cornerRadius:100))
+                            }
+                            Button(action: {
+                                expression.append("tan(")
+                            }) {
+                                Text("tan")
+                                    .font(.title)
+                                    .padding()
+                                    .frame(width: 75, height: 50)
+                                    .foregroundStyle(.white)
+                                    .background(.orange)
+                                    .clipShape(RoundedRectangle(cornerRadius:100))
+                            }
+                            
                         }
                         
                     }
@@ -362,7 +400,7 @@ struct ContentView: View {
 
     func parserCalc(_ expression: String) -> String {
         do {
-            var value = try expression.evaluate()
+            let value = try expression.evaluate()
             
             if String(value).hasSuffix(".0") { // if value ends in .0
                 return String(format: "%.0f", value)
@@ -379,16 +417,9 @@ struct ContentView: View {
     
 }
 
-struct SettingsView: View {
-    var body: some View {
-        Text("hello")
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-        SettingsView()
     }
 }
 
